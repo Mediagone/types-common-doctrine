@@ -1,0 +1,36 @@
+{
+    "name": "mediagone/types-common-doctrine",
+    "type": "library",
+    "description": "Provides Doctrine types for mediagone/types-common package.",
+    "keywords": ["doctrine", "value objects", "ddd", "type"],
+    "license": "MIT",
+    "authors": [
+        {"name": "Bruce Suire"}
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Mediagone\\Doctrine\\Types\\Common\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Mediagone\\Doctrine\\Types\\Common\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "doctrine/dbal": "^2.7",
+        "mediagone/common-types": "^0.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "scripts": {
+        "tests": "phpunit -c phpunit.xml.dist --testsuite Unit_Tests"
+    }
+  }
