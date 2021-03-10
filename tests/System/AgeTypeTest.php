@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\System;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\System\Age;
+use Mediagone\Types\Common\System\Age;
 use Mediagone\Doctrine\Types\Common\System\AgeType;
 use PHPUnit\Framework\TestCase;
 

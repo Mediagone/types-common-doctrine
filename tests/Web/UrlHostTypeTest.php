@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\Web;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSql94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Web\UrlHost;
+use Mediagone\Types\Common\Web\UrlHost;
 use Mediagone\Doctrine\Types\Common\Web\UrlHostType;
 use PHPUnit\Framework\TestCase;
 

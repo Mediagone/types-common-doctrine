@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\Text;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Text\Slug;
+use Mediagone\Types\Common\Text\Slug;
 
 
 final class SlugType extends Type

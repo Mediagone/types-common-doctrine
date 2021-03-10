@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\Crypto;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Crypto\HashBcrypt;
+use Mediagone\Types\Common\Crypto\HashBcrypt;
 use Mediagone\Doctrine\Types\Common\Crypto\HashBcryptType;
 use PHPUnit\Framework\TestCase;
 

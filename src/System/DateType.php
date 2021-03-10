@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\DateTimeType;
-use Mediagone\Common\Types\System\Date;
+use Mediagone\Types\Common\System\Date;
 
 
 final class DateType extends DateTimeType

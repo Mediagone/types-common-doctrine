@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\Text;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSql94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Text\Slug;
+use Mediagone\Types\Common\Text\Slug;
 use Mediagone\Doctrine\Types\Common\Text\SlugType;
 use PHPUnit\Framework\TestCase;
 

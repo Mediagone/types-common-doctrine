@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\System;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\System\Duration;
+use Mediagone\Types\Common\System\Duration;
 use Mediagone\Doctrine\Types\Common\System\DurationType;
 use PHPUnit\Framework\TestCase;
 

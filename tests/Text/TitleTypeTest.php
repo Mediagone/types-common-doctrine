@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\Text;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSql94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Text\Title;
+use Mediagone\Types\Common\Text\Title;
 use Mediagone\Doctrine\Types\Common\Text\TitleType;
 use PHPUnit\Framework\TestCase;
 

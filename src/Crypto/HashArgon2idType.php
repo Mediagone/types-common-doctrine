@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\Crypto;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Crypto\HashArgon2id;
+use Mediagone\Types\Common\Crypto\HashArgon2id;
 
 
 final class HashArgon2idType extends Type

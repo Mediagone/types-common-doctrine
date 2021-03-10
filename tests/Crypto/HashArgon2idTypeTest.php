@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\Crypto;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Crypto\HashArgon2id;
+use Mediagone\Types\Common\Crypto\HashArgon2id;
 use Mediagone\Doctrine\Types\Common\Crypto\HashArgon2idType;
 use PHPUnit\Framework\TestCase;
 

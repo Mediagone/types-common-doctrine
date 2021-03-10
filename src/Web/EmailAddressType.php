@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\Web;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Web\EmailAddress;
+use Mediagone\Types\Common\Web\EmailAddress;
 
 
 final class EmailAddressType extends Type

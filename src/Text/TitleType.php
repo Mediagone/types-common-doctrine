@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\Text;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Text\Title;
+use Mediagone\Types\Common\Text\Title;
 
 
 final class TitleType extends Type

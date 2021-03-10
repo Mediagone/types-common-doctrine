@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\DateTimeType;
-use Mediagone\Common\Types\System\DateTimeUTC;
+use Mediagone\Types\Common\System\DateTimeUTC;
 
 
 final class DateTimeUTCType extends DateTimeType

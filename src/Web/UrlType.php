@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\Web;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Web\Url;
+use Mediagone\Types\Common\Web\Url;
 
 
 final class UrlType extends Type

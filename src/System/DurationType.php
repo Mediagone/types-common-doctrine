@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\System\Duration;
+use Mediagone\Types\Common\System\Duration;
 
 
 final class DurationType extends Type

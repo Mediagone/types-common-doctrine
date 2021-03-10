@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\System\Age;
+use Mediagone\Types\Common\System\Age;
 
 
 final class AgeType extends Type

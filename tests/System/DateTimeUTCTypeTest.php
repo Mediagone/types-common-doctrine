@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\System;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSql94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\System\DateTimeUTC;
+use Mediagone\Types\Common\System\DateTimeUTC;
 use Mediagone\Doctrine\Types\Common\System\DateTimeUTCType;
 use PHPUnit\Framework\TestCase;
 

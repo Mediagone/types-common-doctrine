@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\Crypto;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Crypto\HashBcrypt;
+use Mediagone\Types\Common\Crypto\HashBcrypt;
 
 
 final class HashBcryptType extends Type

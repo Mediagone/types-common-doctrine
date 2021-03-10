@@ -4,7 +4,7 @@ namespace Mediagone\Doctrine\Types\Common\Text;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\Text\TextMedium;
+use Mediagone\Types\Common\Text\TextMedium;
 
 
 final class TextMediumType extends Type

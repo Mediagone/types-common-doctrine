@@ -5,7 +5,7 @@ namespace Tests\Mediagone\Doctrine\Types\Common\System;
 use Doctrine\DBAL\Platforms\MySqlPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Common\Types\System\Count;
+use Mediagone\Types\Common\System\Count;
 use Mediagone\Doctrine\Types\Common\System\CountType;
 use PHPUnit\Framework\TestCase;
 
