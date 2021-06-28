@@ -32,7 +32,7 @@ final class RandomTokenSha512Type extends Type
      */
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL([
+        return $platform->getBinaryTypeDeclarationSQL([
             'length' => RandomTokenSha512::BINARY_LENGTH,
             'fixed' => true,
         ]);
