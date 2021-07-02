@@ -4,16 +4,16 @@ namespace Mediagone\Doctrine\Types\Common\Crypto;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use Mediagone\Types\Common\Crypto\RandomTokenSha512;
+use Mediagone\Types\Common\Crypto\Sha512;
 
 
-final class RandomTokenSha512Type extends Type
+final class Sha512Type extends Type
 {
     //========================================================================================================
     // Properties
     //========================================================================================================
     
-    public const NAME = 'common_randomtokensha512';
+    public const NAME = 'common_sha512';
     
     
     
@@ -33,7 +33,7 @@ final class RandomTokenSha512Type extends Type
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
         return $platform->getBinaryTypeDeclarationSQL([
-            'length' => RandomTokenSha512::BINARY_LENGTH,
+            'length' => Sha512::BINARY_LENGTH,
             'fixed' => true,
         ]);
     }
@@ -53,16 +53,16 @@ final class RandomTokenSha512Type extends Type
      *
      * @param string|null $value The value to convert.
      */
-    public function convertToPHPValue($value, AbstractPlatform $platform) : ?RandomTokenSha512
+    public function convertToPHPValue($value, AbstractPlatform $platform) : ?Sha512
     {
-        return $value !== null ? RandomTokenSha512::fromBinaryString($value) : null;
+        return $value !== null ? Sha512::fromBinaryString($value) : null;
     }
     
     
     /**
      * Converts a value from its PHP representation to its database representation of this type.
      *
-     * @param RandomTokenSha512|null $value The value to convert.
+     * @param Sha512|null $value The value to convert.
      */
     public function convertToDatabaseValue($value, AbstractPlatform $platform) : ?string
     {
