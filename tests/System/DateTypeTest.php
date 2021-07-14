@@ -74,7 +74,7 @@ final class DateTypeTest extends TestCase
         $platform = new MySqlPlatform();
         
         $referenceDate = Date::today();
-        $referenceValue = $referenceDate->format($platform->getDateTimeFormatString());
+        $referenceValue = $referenceDate->format($platform->getDateFormatString());
         
         $value = $this->type->convertToPHPValue($referenceValue, new MySqlPlatform());
         
