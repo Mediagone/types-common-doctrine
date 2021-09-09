@@ -52,7 +52,7 @@ final class LongitudeType extends Type
      */
     public function convertToPHPValue($value, AbstractPlatform $platform) : ?Longitude
     {
-        return $value !== null ? Longitude::fromFloat($value) : null;
+        return $value !== null ? Longitude::fromFloat((float)$value) : null;
     }
     
     
