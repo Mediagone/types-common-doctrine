@@ -52,7 +52,7 @@ final class LatitudeType extends Type
      */
     public function convertToPHPValue($value, AbstractPlatform $platform) : ?Latitude
     {
-        return $value !== null ? Latitude::fromFloat($value) : null;
+        return $value !== null ? Latitude::fromFloat((float)$value) : null;
     }
     
     
