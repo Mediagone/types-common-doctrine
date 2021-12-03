@@ -54,7 +54,7 @@ final class DateType extends DateTimeType
      */
     public function convertToDatabaseValue($value, AbstractPlatform $platform) : ?string
     {
-        return $value ? $value->format($platform->getDateTimeFormatString()) : null;
+        return $value ? $value->format($platform->getDateFormatString()) : null;
     }
     
     
