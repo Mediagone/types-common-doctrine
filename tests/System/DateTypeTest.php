@@ -65,7 +65,7 @@ final class DateTypeTest extends TestCase
         $utcDate = Date::today();
         $value = $this->type->convertToDatabaseValue($utcDate, $platform);
         
-        self::assertSame($value, $utcDate->format($platform->getDateTimeFormatString()));
+        self::assertSame($value, $utcDate->format($platform->getDateFormatString()));
     }
     
     
