@@ -48,7 +48,7 @@ class SlugType extends Type
     /**
      * Converts a value from its database representation to its PHP representation of this type.
      *
-     * @param string|null $value The value to convert.
+     * @param mixed $value The value to convert.
      */
     public function convertToPHPValue($value, AbstractPlatform $platform) : ?Slug
     {
