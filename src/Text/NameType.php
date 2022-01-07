@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\Text\Name;
 
 
-final class NameType extends Type
+class NameType extends Type
 {
     //========================================================================================================
     // Properties
@@ -30,7 +30,7 @@ final class NameType extends Type
     /**
      * Gets the SQL declaration snippet for a field of this type.
      */
-    public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
+    final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
         return $platform->getVarcharTypeDeclarationSQL([
             'length' => Name::MAX_LENGTH,
@@ -41,7 +41,7 @@ final class NameType extends Type
     /**
      * Adds an SQL comment to typehint the actual Doctrine Type for reverse schema engineering.
      */
-    public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
+    final public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
     {
         return true;
     }

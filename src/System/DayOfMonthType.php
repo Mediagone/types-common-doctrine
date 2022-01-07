@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\System\DayOfMonth;
 
 
-final class DayOfMonthType extends Type
+class DayOfMonthType extends Type
 {
     //========================================================================================================
     // Properties
@@ -30,7 +30,7 @@ final class DayOfMonthType extends Type
     /**
      * Gets the SQL declaration snippet for a field of this type.
      */
-    public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
+    final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
         return $platform->getIntegerTypeDeclarationSQL([
         ]);
@@ -40,7 +40,7 @@ final class DayOfMonthType extends Type
     /**
      * Adds an SQL comment to typehint the actual Doctrine Type for reverse schema engineering.
      */
-    public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
+    final public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
     {
         return true;
     }

@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\DateTimeType;
 use Mediagone\Types\Common\System\DateTimeUTC;
 
 
-final class DateTimeUTCType extends DateTimeType
+class DateTimeUTCType extends DateTimeType
 {
     //========================================================================================================
     // Properties
@@ -30,7 +30,7 @@ final class DateTimeUTCType extends DateTimeType
     /**
      * Adds an SQL comment to typehint the actual Doctrine Type for reverse schema engineering.
      */
-    public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
+    final public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
     {
         return true;
     }

@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\Crypto\HashBcrypt;
 
 
-final class HashBcryptType extends Type
+class HashBcryptType extends Type
 {
     //========================================================================================================
     // Properties
@@ -32,7 +32,7 @@ final class HashBcryptType extends Type
     /**
      * Gets the SQL declaration snippet for a field of this type.
      */
-    public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
+    final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
         return $platform->getVarcharTypeDeclarationSQL([
             'length' => self::SIZE,
@@ -44,7 +44,7 @@ final class HashBcryptType extends Type
     /**
      * Adds an SQL comment to typehint the actual Doctrine Type for reverse schema engineering.
      */
-    public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
+    final public function requiresSQLCommentHint(AbstractPlatform $platform) : bool
     {
         return true;
     }
