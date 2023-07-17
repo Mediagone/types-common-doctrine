@@ -3,11 +3,11 @@
 namespace Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Types\DateTimeType;
+use Doctrine\DBAL\Types\DateType as DoctrineDateType;
 use Mediagone\Types\Common\System\Date;
 
 
-class DateType extends DateTimeType
+class DateType extends DoctrineDateType
 {
     //========================================================================================================
     // Properties
