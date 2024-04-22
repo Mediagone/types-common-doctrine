@@ -32,7 +32,11 @@ class IbanType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getStringTypeDeclarationSQL([
+        $method = method_exists($platform, 'getStringTypeDeclarationSQL')
+            ? 'getStringTypeDeclarationSQL'
+            : 'getVarcharTypeDeclarationSQL';
+        
+        return $platform->$method([
             'length' => Iban::MAX_LENGTH,
         ]);
     }

@@ -12,7 +12,11 @@ final class FooType extends Type
     
     public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
-        return $platform->getStringTypeDeclarationSQL([
+        $method = method_exists($platform, 'getStringTypeDeclarationSQL')
+            ? 'getStringTypeDeclarationSQL'
+            : 'getVarcharTypeDeclarationSQL';
+        
+        return $platform->$method([
             'length' => 10,
         ]);
     }
