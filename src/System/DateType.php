@@ -3,11 +3,11 @@
 namespace Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Types\DateType as DoctrineDateType;
+use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\System\Date;
 
 
-class DateType extends DoctrineDateType
+class DateType extends Type
 {
     //========================================================================================================
     // Properties
@@ -56,7 +56,9 @@ class DateType extends DoctrineDateType
     {
         return $value ? $value->format($platform->getDateFormatString()) : null;
     }
-    
-    
-    
+
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
+    {
+        return $platform->getDateTypeDeclarationSQL($column);
+    }
 }
