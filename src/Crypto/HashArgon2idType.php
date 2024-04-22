@@ -34,7 +34,7 @@ class HashArgon2idType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL([
+        return $platform->getStringTypeDeclarationSQL([
             'length' => self::SIZE,
             'fixed' => false,
         ]);

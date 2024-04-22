@@ -32,7 +32,7 @@ class NameType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL([
+        return $platform->getStringTypeDeclarationSQL([
             'length' => Name::MAX_LENGTH,
         ]);
     }

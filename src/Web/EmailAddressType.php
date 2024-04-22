@@ -32,8 +32,8 @@ class EmailAddressType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL([
-            'length' => '70',
+        return $platform->getStringTypeDeclarationSQL([
+            'length' => 70,
         ]);
     }
     
