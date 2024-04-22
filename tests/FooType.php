@@ -10,9 +10,9 @@ final class FooType extends Type
 {
     public const NAME = 'common_foo';
     
-    public function getSQLDeclaration(array $column, AbstractPlatform $platform)
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
-        $platform->getVarcharTypeDeclarationSQL([
+        return $platform->getStringTypeDeclarationSQL([
             'length' => 10,
         ]);
     }

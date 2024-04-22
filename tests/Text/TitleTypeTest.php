@@ -3,7 +3,7 @@
 namespace Tests\Mediagone\Doctrine\Types\Common\Text;
 
 use Doctrine\DBAL\Platforms\MySqlPlatform;
-use Doctrine\DBAL\Platforms\PostgreSql94Platform;
+use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
 use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\Text\Title;
 use Mediagone\Doctrine\Types\Common\Text\TitleType;
@@ -55,15 +55,15 @@ final class TitleTypeTest extends TestCase
     public function test_requires_comment_hint() : void
     {
         self::assertTrue($this->type->requiresSQLCommentHint(new MySqlPlatform()));
-        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSql94Platform()));
+        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSQLPlatform()));
     }
     
     
     public function test_declare_sql() : void
     {
         self::assertSame('VARCHAR('.Title::MAX_LENGTH.')', $this->type->getSQLDeclaration([], new MySqlPlatform()));
-        self::assertSame('VARCHAR('.Title::MAX_LENGTH.')', $this->type->getSQLDeclaration(['length' => '70'], new MySqlPlatform()));
-        self::assertSame('VARCHAR('.Title::MAX_LENGTH.')', $this->type->getSQLDeclaration(['length' => '200'], new MySqlPlatform()));
+        self::assertSame('VARCHAR('.Title::MAX_LENGTH.')', $this->type->getSQLDeclaration(['length' => 70], new MySqlPlatform()));
+        self::assertSame('VARCHAR('.Title::MAX_LENGTH.')', $this->type->getSQLDeclaration(['length' => 200], new MySqlPlatform()));
     }
     
     
