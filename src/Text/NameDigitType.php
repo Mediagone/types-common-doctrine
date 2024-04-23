@@ -32,9 +32,15 @@ class NameDigitType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL([
-            'length' => NameDigit::MAX_LENGTH,
-        ]);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL([
+                'length' => NameDigit::MAX_LENGTH,
+            ]);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL([
+                'length' => NameDigit::MAX_LENGTH,
+            ]);
+        }
     }
     
     

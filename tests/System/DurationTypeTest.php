@@ -3,7 +3,7 @@
 namespace Tests\Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\MySqlPlatform;
-use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
+use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
 use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\System\Duration;
 use Mediagone\Doctrine\Types\Common\System\DurationType;
@@ -55,15 +55,15 @@ final class DurationTypeTest extends TestCase
     public function test_requires_comment_hint() : void
     {
         self::assertTrue($this->type->requiresSQLCommentHint(new MySqlPlatform()));
-        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSql94Platform()));
+        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSQLPlatform()));
     }
     
     
     public function test_declare_sql() : void
     {
         self::assertSame('INT', $this->type->getSQLDeclaration([], new MySqlPlatform()));
-        self::assertSame('INT', $this->type->getSQLDeclaration(['length' => '70'], new MySqlPlatform()));
-        self::assertSame('INT', $this->type->getSQLDeclaration(['length' => '200'], new MySqlPlatform()));
+        self::assertSame('INT', $this->type->getSQLDeclaration(['length' => 70], new MySqlPlatform()));
+        self::assertSame('INT', $this->type->getSQLDeclaration(['length' => 200], new MySqlPlatform()));
     }
     
     

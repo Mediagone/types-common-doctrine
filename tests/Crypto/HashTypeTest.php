@@ -3,7 +3,7 @@
 namespace Tests\Mediagone\Doctrine\Types\Common\Crypto;
 
 use Doctrine\DBAL\Platforms\MySqlPlatform;
-use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
+use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
 use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\Crypto\Hash;
 use Mediagone\Types\Common\Crypto\HashArgon2id;
@@ -59,7 +59,7 @@ final class HashTypeTest extends TestCase
     public function test_requires_comment_hint() : void
     {
         self::assertTrue($this->type->requiresSQLCommentHint(new MySqlPlatform()));
-        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSQL94Platform()));
+        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSQLPlatform()));
     }
     
     

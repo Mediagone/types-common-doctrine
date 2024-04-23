@@ -32,9 +32,15 @@ class CityType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL([
-            'length' => City::MAX_LENGTH,
-        ]);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL([
+                'length' => City::MAX_LENGTH,
+            ]);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL([
+                'length' => City::MAX_LENGTH,
+            ]);
+        }
     }
     
     

@@ -32,9 +32,15 @@ class BicType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL([
-            'length' => Bic::MAX_LENGTH,
-        ]);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL([
+                'length' => Bic::MAX_LENGTH,
+            ]);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL([
+                'length' => Bic::MAX_LENGTH,
+            ]);
+        }
     }
     
     

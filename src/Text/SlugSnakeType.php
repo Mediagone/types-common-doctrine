@@ -32,7 +32,11 @@ class SlugSnakeType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getVarcharTypeDeclarationSQL($fieldDeclaration);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL($fieldDeclaration);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL($fieldDeclaration);
+        }
     }
     
     

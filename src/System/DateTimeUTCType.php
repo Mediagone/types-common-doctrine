@@ -3,11 +3,11 @@
 namespace Mediagone\Doctrine\Types\Common\System;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Types\DateTimeType;
+use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\System\DateTimeUTC;
 
 
-class DateTimeUTCType extends DateTimeType
+class DateTimeUTCType extends Type
 {
     //========================================================================================================
     // Properties
@@ -56,7 +56,10 @@ class DateTimeUTCType extends DateTimeType
     {
         return $value ? $value->format($platform->getDateTimeFormatString()) : null;
     }
-    
-    
-    
+
+
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
+    {
+        return $platform->getDateTimeTypeDeclarationSQL($column);
+    }
 }

@@ -3,7 +3,7 @@
 namespace Tests\Mediagone\Doctrine\Types\Common\Geo;
 
 use Doctrine\DBAL\Platforms\MySqlPlatform;
-use Doctrine\DBAL\Platforms\PostgreSql94Platform;
+use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
 use Doctrine\DBAL\Types\Type;
 use Mediagone\Doctrine\Types\Common\Geo\LatitudeType;
 use Mediagone\Types\Common\Geo\Latitude;
@@ -55,7 +55,7 @@ final class LatitudeTypeTest extends TestCase
     public function test_requires_comment_hint() : void
     {
         self::assertTrue($this->type->requiresSQLCommentHint(new MySqlPlatform()));
-        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSql94Platform()));
+        self::assertTrue($this->type->requiresSQLCommentHint(new PostgreSQLPlatform()));
     }
     
     
