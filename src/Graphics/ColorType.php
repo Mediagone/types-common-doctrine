@@ -32,14 +32,17 @@ class ColorType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        $method = method_exists($platform, 'getStringTypeDeclarationSQL')
-            ? 'getStringTypeDeclarationSQL'
-            : 'getVarcharTypeDeclarationSQL';
-        
-        return $platform->$method([
-            'length' => 7,
-            'fixed' => true,
-        ]);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL([
+                'length' => 7,
+                'fixed' => true,
+            ]);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL([
+                'length' => 7,
+                'fixed' => true,
+            ]);
+        }
     }
     
     

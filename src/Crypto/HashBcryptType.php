@@ -34,14 +34,17 @@ class HashBcryptType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        $method = method_exists($platform, 'getStringTypeDeclarationSQL')
-            ? 'getStringTypeDeclarationSQL'
-            : 'getVarcharTypeDeclarationSQL';
-        
-        return $platform->$method([
-            'length' => self::SIZE,
-            'fixed' => true,
-        ]);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL([
+                'length' => self::SIZE,
+                'fixed' => true,
+            ]);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL([
+                'length' => self::SIZE,
+                'fixed' => true,
+            ]);
+        }
     }
     
     

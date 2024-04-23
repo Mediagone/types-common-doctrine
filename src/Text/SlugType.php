@@ -5,6 +5,7 @@ namespace Mediagone\Doctrine\Types\Common\Text;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 use Mediagone\Types\Common\Text\Slug;
+use Mediagone\Types\Common\Web\UrlHost;
 
 
 class SlugType extends Type
@@ -32,7 +33,11 @@ class SlugType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        return $platform->getStringTypeDeclarationSQL($fieldDeclaration);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL($fieldDeclaration);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL($fieldDeclaration);
+        }
     }
     
     

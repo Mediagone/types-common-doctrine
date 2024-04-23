@@ -32,13 +32,15 @@ class UrlPathType extends Type
      */
     final public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) : string
     {
-        $method = method_exists($platform, 'getStringTypeDeclarationSQL')
-            ? 'getStringTypeDeclarationSQL'
-            : 'getVarcharTypeDeclarationSQL';
-        
-        return $platform->$method([
-            'length' => UrlPath::MAX_LENGTH,
-        ]);
+        if (method_exists($platform, 'getStringTypeDeclarationSQL')) {
+            return $platform->getStringTypeDeclarationSQL([
+                'length' => UrlPath::MAX_LENGTH,
+            ]);
+        } else {
+            return $platform->getVarcharTypeDeclarationSQL([
+                'length' => UrlPath::MAX_LENGTH,
+            ]);
+        }
     }
     
     
